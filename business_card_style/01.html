@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片練習</title>
+    <link rel="stylesheet" href="/all-Reset.css">
+
+    <script src="https://kit.fontawesome.com/f552039a7d.js" crossorigin="anonymous"></script>
+</li>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px red solid; */
+
+        }
+        img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .d-flex{
+            display: flex;
+        }
+        .wrap{
+            width: 100%;
+            /* height: 100vh; */
+
+        }
+        .container{
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            background: linear-gradient(-70deg,#21395C 40%,#DAD4CD);
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            margin: 50px 0;
+            background-color: antiquewhite;
+        }
+        .item .pic,
+        .item .txt{
+            width: 50%;
+        }
+        .item:nth-of-type(1){
+            position: relative;
+            width: 33.33333%;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #0007;
+            overflow: hidden;
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .item:nth-of-type(1) img {
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+            border-radius: 10px;
+
+        }
+        .item:nth-of-type(1) .txt{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 100%;
+            height: 50px;
+            padding: 1.4em 0.5em;
+            font-size: 14px;
+            color: #fff;
+            border: 1px solid #ccc8;
+            box-shadow: 0 0 20px #0008;
+            background: rgba(250, 250, 250, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateX(-50%) scale(.9);
+            transition: all .3s;
+
+        }
+        .item:nth-of-type(1) .txt h3{
+            font-size: 30px;
+            line-height: 1.5;
+        }
+        .item:nth-of-type(1) .txt p {
+            font-size: 16px;
+            line-height: 1;
+            
+        }
+        .item:nth-of-type(1):hover .txt{
+            height: 150px;
+        }
+
+        .item:nth-of-type(2){
+            position: relative;
+            width: 33.33333%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+
+            
+        }
+        .item:nth-of-type(2) .pic img{
+            position: absolute;
+            border-radius: 15px;
+            top: 0;
+            left: 0;
+            transition: transform .5s ,filter .4s;
+        }
+        .item:nth-of-type(2) input[type="checkbox"]{
+            position: absolute;
+            /* display: inline-block; */
+            margin: 0;
+            bottom: 10px;
+            width: 40px;
+            height: 40px;
+            left: 88%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            background: #0008;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #0008;
+            z-index: 10;
+            appearance: none;
+            transition: left .3s ;
+        }
+        .item:nth-of-type(2) input[type="checkbox"]::before{
+            content: "\f129";
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900;
+             font-size: 1.2em;
+             color: white;
+        }
+        .item:nth-of-type(2) input[type="checkbox"]:checked{
+            left: 70px;
+        }
+        .item:nth-of-type(2) input[type="checkbox"]:checked ~ .pic img{
+            transform: scale(1.3) rotate(-20deg);
+            filter: blur(2px);
+        }
+        .item:nth-of-type(2) input[type="checkbox"]:checked::before{
+            content: "\f061";
+            color: white;
+
+        }
+        .item:nth-of-type(2) .pic{
+        }
+      
+        .item:nth-of-type(2) .txt{
+            position: absolute;
+            width: 80%;
+            padding: 30px 20px;
+            height: 80%;
+            right: 0;
+            bottom: 0;
+            /* background: white; */
+            background: rgb(29, 29, 29,.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0008;
+            transform: translate(100%);
+            transition:  transform .4s;
+        }
+        .item:nth-of-type(2) input[type="checkbox"]:checked ~ .txt{
+            transform: translate(0%);
+
+        }
+        .item:nth-of-type(2) h3{
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .item:nth-of-type(2) p{
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .item:nth-of-type(3){
+            align-items: flex-end;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: rgb(32, 46, 42,.4);
+            border-radius: 20px;
+            transition: all .6s ;
+            z-index: 10;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        
+        .item:nth-of-type(3) .pic{
+            background: #fff;
+            width: 100%;
+        }
+        .item:nth-of-type(3) img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 0;
+            left: 50%;
+            object-fit: cover;
+            border-radius: 20px;
+            transform: translateX(-50%);
+            transition: margin-top .3s;
+
+        }
+        .item:nth-of-type(3):hover{
+            width: 310px;
+        }
+        .item:nth-of-type(3):hover .pic img{
+            margin-top: -50px;
+            /* top: -50px; */
+        }
+
+        .item:nth-of-type(3)::before{
+            content: "\f3c5 Where the Heart Goes";
+            position: absolute;
+            left: 10px;
+            bottom: 15px;
+            font-family: "Font Awesome 5 Free"; 
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .35rem;
+            color: white;
+        }
+        .item:nth-of-type(4){
+            position: relative;
+            width: 33.333333%;
+            height: 250px;
+            justify-content: space-between;
+            background:transparent;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .item:nth-of-type(4) .pic{
+            display: inline-block;
+            width: 48%;
+            height: 100%;
+            text-align: center;
+            line-height: 250px;
+            background: #fff;
+            border-radius: 10px;
+
+        }
+
+        .item:nth-of-type(4) img{
+            width: 180px;
+            border-radius: 100%;
+        }
+        .item:nth-of-type(4) .txt{
+            display: flex;
+            width: 48%;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            font-size: 16px;
+            background: #fff;
+            border-radius: 10px;
+
+
+        }
+        .item:nth-of-type(4) .txt p{
+            margin-left: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            
+        }
+        .item:nth-of-type(4) .txt p +p{
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .item:nth-of-type(4) #btn{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            background: #fff;
+            border-radius: 100%;
+            box-shadow: 0 0 10px #0008;
+            appearance: none;
+            z-index: 10;
+        }
+        .item:nth-of-type(4) #btn::before{
+            position: absolute;
+            content: "\f060";
+            left: 50%;
+            top: 50%;
+            font-family: "Font Awesome 5 Free"; 
+            font-size: 1.2em;
+            font-weight: 900;
+            color:#000;
+            transform: translate(-50%,-50%) ;
+            z-index: 10;
+        }
+        .item:nth-of-type(4) #btn:checked:before {
+            content: "\f00d";
+        }
+
+        .item:nth-of-type(4) .item-slider{
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff;
+            width: 45%;
+            height: 100%;
+            right: 0;
+            border: 4px solid #0001;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0001;
+            transform: translate(100%);
+            transition: transform .4s;
+        }
+        .item:nth-of-type(4) .item-slider  p{
+            margin-left: 16px;
+            font-weight: bold;
+        }
+        .item:nth-of-type(4) #btn:checked ~ .item-slider{
+            transform: translate(0%);
+        }
+        .item:nth-of-type(4) .skills{
+            flex-wrap: wrap;
+            
+        }
+        .item:nth-of-type(4) .skills > div{
+            margin-top: 10px;
+            margin-left: 18px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .item:nth-of-type(4) .icons{
+            margin:  0 auto;
+            margin-top: 15px;
+
+        }
+        .item:nth-of-type(4) .icons i{
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #000f;
+        }
+        .item:nth-of-type(4) .icons i:hover{
+            color: #0008;
+        }
+
+        .item:nth-of-type(5){
+            position: relative;
+            width: 20%;
+            height: 250px;
+            align-content: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-family: 'Josefin Sans', sans-serif;
+            background: #1fc4da;
+            overflow: hidden;
+        }
+        .item:nth-of-type(5) .item-center{
+            text-align: center;
+        }
+        .item:nth-of-type(5) .pic{
+            width: 100%;
+        }
+        .item:nth-of-type(5) .pic img{
+            width: 100px;
+            border-radius: 50%;
+
+        }
+        .item:nth-of-type(5) .txt{
+            width: 100%;
+            font-size: 20px;
+
+        }
+        .item:nth-of-type(5) .user-name{
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: 500;
+            color: #fff;
+        }
+        .item:nth-of-type(5) .txt .skill{
+            color: #e9ebed;
+        }
+        .item:nth-of-type(5) .arr-btn{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: 0;
+            bottom: 0;
+            appearance: none;
+            background: #fff;
+            border-radius: 20px  0 20px 0 ;
+            transition: all .4s;
+            
+        }
+        .item:nth-of-type(5) .arr-btn::before{
+            position: absolute;
+            content: "\f062";
+            left: 50%;
+            top: 50%;
+            font-family: "Font Awesome 5 Free"; 
+            font-size: 1.5rem;
+            font-weight: 900;
+            color:#000;
+            transform: translate(-50%,-50%) rotate(140deg) ;
+            z-index: 10;
+        }
+        .item:nth-of-type(5) .active_arr_btn{
+            transform: translate(80%,80%);
+
+
+        }
+        
+        .item:nth-of-type(5) > .item-slider-left {
+            position: absolute;
+            width: 240px;
+            height: 250px;
+            padding: 10px;
+            flex-direction: column;
+            justify-content: center;
+            background: #006092;
+            border-radius: 20px;
+            transition: all .5s;
+            /* top: -210px;
+            left: 40px; */
+        }
+        .item:nth-of-type(5)  .off{
+            transform: translate(-85% ,-85%) rotate(90deg);
+
+        }
+        .item:nth-of-type(5) .active{
+            transform: translate(0% ,0%) rotate(0deg);
+
+        }
+
+
+        .item:nth-of-type(5) .item-slider-left  p{
+            /* margin-top: 40px; */
+            font-size: 25px;
+            color: #fff;
+
+        }
+        .item:nth-of-type(5) .skills{
+            flex-wrap: wrap;
+            margin-top: 20px;
+            color: #fff;
+
+        }
+        .item:nth-of-type(5) .skills div{
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        /* .item:nth-of-type(5) .skills div:first-of-type ,
+        .item:nth-of-type(5) .skills div:last-of-type {
+            margin-left: 10px;
+        } */
+        .item:nth-of-type(5) .icons{
+            /* font-size: 40px; */
+            margin: 0;
+            
+        }
+        .item:nth-of-type(5) .icons i{
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 40px;
+            color: #fff;
+        }
+        .cancel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            border-radius: 20px 0 20px 0;
+        }
+        .cancel{
+            font-size: 1.5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/200/300" alt="">
+                    <div class="txt">
+                        <h3>titile</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi deserunt officia odio magni perferendis sed, vitae cupiditate tempora ut</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <input type="checkbox" name="" id="">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/300" alt="">
+                </div>
+                <div class="txt">
+                    <h3>titile</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/300" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <input type="checkbox" name="" id="btn">
+                <div class="pic">
+                    <img class="skill" src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-vector-stock-91602499.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <p class="user-name">Harry</p>
+                    <p class="skill">Front-end developer</p>
+                </div>
+                <div class="item-slider d-flex">
+                    <p>skill:</p>
+                    <div class="skills d-flex">
+                        <div>Html</div>
+                        <div>CSS</div>
+                        <div>JavaScript</div>
+                        <div>Git</div>
+                    </div>
+                    <div class="icons d-flex">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-center">
+                    <div class="pic">
+                        <img class="skill" src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-vector-stock-91602499.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <p class="user-name">Harry</p>
+                        <p class="skill">Front-end developer</p>
+                    </div>
+                </div>
+                <!-- <div class="arr-btn"></div> -->
+                <input type="checkbox" name="" id="btn" class="arr-btn">
+                <div class="item-slider-left off d-flex ">
+                    <p>skill:</p>
+                    <div class="skills d-flex">
+                        <div>Html</div>
+                        <div>CSS</div>
+                        <div>JavaScript</div>
+                        <div>Git</div>
+                    </div>
+                    <div class="icons d-flex">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                    <div class="cancel">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+            <script>
+                const ccl = document.querySelector(".cancel");
+                const arr = document.querySelector(".arr-btn");
+                const item_slider = document.querySelector(".item-slider-left ");
+
+                arr.addEventListener("click" , () =>{
+                    arr.classList.add('active_arr_btn');
+                    if (item_slider.classList.contains('off')){
+                        item_slider.classList.remove('off');
+                        item_slider.classList.add('active');
+
+                    };
+                } ); 
+
+                ccl.addEventListener("click" , () =>{
+                    arr.classList.remove('active_arr_btn');
+                    if (item_slider.classList.contains('active')){
+                        item_slider.classList.remove('active');
+                        item_slider.classList.add('off');
+
+
+                    }
+                })
+
+                
+                
+            </script>
+</html>

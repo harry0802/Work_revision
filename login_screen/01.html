@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入表單</title>
+    <link rel="stylesheet" href="/all-Reset.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .d-flex{
+            display: flex;
+            flex-direction: column-reverse;
+           
+        }
+        .txt-wrap{
+            position: relative;
+            height: 5rem;
+            line-height: 44px;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            /* background: #dc8665; */
+            /* background: linear-gradient( 65deg,#4273C7,#4F58A0 60%); */
+
+        }
+        .form-txt{
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            height: 100%;
+            width: 100%;
+            background-color: #4273C7;
+            color: #e3e4e6;
+
+        }
+     
+        .switch-bnt{
+            display: flex;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            overflow: hidden;
+            border-radius: 2rem;
+        }
+        .switch-bnt .exchange{
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: #006092;
+            color: #ffc9a5;
+        }
+        .switch-bnt button{
+          
+        }
+        .switch-bnt button:hover{
+            background: #ccc8;
+        }
+        .exchange.active{
+            background: #9ba9c5;
+        }
+    
+        .form-items h2{
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+        }
+        .form-txt-item .form-btn{
+            width: 100%;
+            margin-top: 16px;
+            padding: 16px ;
+            font-size: 18px;
+            background: #eaebed;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+
+        }
+
+        
+        .form-txt-item .form-btn:hover{
+
+            color: #4273C7;
+        }
+   
+        .form-items{
+            display: block;
+            padding: 6px 12px;
+            margin: 50% 5% auto 5%;
+            
+        }
+         .form-txt-item{
+             animation: opct 1s;
+         }
+        .form-txt-item label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 20px;
+            cursor: text;
+            transition: all .3s;    
+        }
+       
+        .form-txt-item input{
+            width: 100%;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background: none;
+            outline: none;
+            font-size: 1.2rem;
+            /* color: #ccc; */
+            color: #fff;
+        }
+
+        .form-txt-item input:focus ~ label,
+        .form-txt-item input:valid ~ label{
+            font-size: 10px;
+            top: -20px;
+
+        }
+
+        .form-txt-item input:focus,
+        .form-txt-item input:valid{
+            border-bottom: 2px solid #ccc;
+
+        }
+        @keyframes opct{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @media screen and (min-width:768px) {
+            .container{
+                background: none;
+            }
+            .form-txt{
+                /* display: flex;
+                justify-content: center;
+                align-items: center; */
+                width: 50%;
+                height: 100%;
+                background-color: #4273C7;
+                /* color: #FFEA81; */
+                 color: #e3e4e6;
+                 
+        }
+
+            .form-pic{
+                width: 50%;
+                height: 100%;
+                background-image: url("./pic/31343.png");
+                background-size:contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+             .form-items{
+                margin: 20% 15% auto 15%;
+            }
+            .form-txt-item button{
+
+            }
+            .form-txt-item input{
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <!-- 圖片區塊 -->
+            <div class="form-pic"></div>
+            <!-- 文字區塊 -->
+
+            <div class="form-txt">
+            <!-- 切換頁面 -->
+            <div class="switch-bnt">
+                <button class="exchange" id="defaultOpen"  onclick="openform(event, 'txt_Signup')">Sign up</button>
+                <button class="exchange"onclick="openform(event,'txt_login')" >Log in</button>
+
+            </div>
+            <div class="form-items">
+                <!-- 註冊頁面 -->
+                <div id="txt_Signup" class="form-txt-item">
+                <h2>Sign up for Free</h2>
+                    <form method="post" name="txt-Signu" data-netlify="true" class=""> 
+                        <div class="txt-name  txt-wrap ">
+                            <input type="text" name="full name" id="name" required autocomplete="">
+                            <label for="name"> Full name </label>
+                        </div>
+
+                        <div class="txt-email  txt-wrap">
+                            <input type="email" name="email" id="email" required autocomplete="">
+                            <label for="email">Email Address </label>
+                        </div>
+                        <div class="txt-password  txt-wrap">
+                            <input type="password" name="password" id="password" required autocomplete="">
+                            <label for="password">Sea a password </label>
+                        </div>
+                        <button type="submit" class="form-btn">Get Started </button>
+                    </form>
+                </div>
+                <!-- 登錄頁面 -->
+                <div id="txt_login" class="form-txt-item" >
+                    <h2>welcom Backl</h2>
+                    <form method="post" name="txt-Signu" data-netlify="true" class=""> 
+                        <div class="txt-email  txt-wrap">
+                            <input type="email" name="email" id="login_email" required autocomplete="">
+                            <label for="login_email">Email Address </label>
+                        </div>
+                        <div class="txt-password  txt-wrap">
+                            <input type="password" name="password" id="login_password" required autocomplete="">
+                            <label for="login_password">Sea a password </label>
+                        </div>
+                        <button type="submit" class="form-btn">Get Started </button>
+                    </form>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function openform (event,formName){
+        var i ,form_txt_item , exchange;
+
+        // form_txt_item = document.querySelector('.form_txt_item ');
+        //編歷所有 form_txt_item display：none
+        form_txt_item = document.getElementsByClassName('form-txt-item')
+        for(i = 0 ; i <  form_txt_item.length ; i++ ){
+            form_txt_item[i].style.display = 'none';
+        }
+        // 編歷所有 切換按鈕
+        exchange = document.getElementsByClassName('exchange')
+        for(i = 0 ; i < exchange.length ; i++){
+            exchange[i].className = exchange[i].className.replace(" active" ,'');
+        }
+        
+        document.getElementById(formName).style.display = 'block' ;
+        event.currentTarget.className += ' active';
+
+    }
+    document.getElementById('defaultOpen').click()
+</script>
+</html>
