@@ -1,0 +1,176 @@
+:root{
+--mypadding:15px;
+--my-gap:15px;
+--myWidth:1;
+--myrow:15px; 
+}
+ /*    定寬容器 */
+ /* 預先把寬度分成12等份 */
+[class*='col-']{
+    box-sizing: border-box;
+    padding: 0  15px;
+}
+    /* 
+    因為 row 加上了負值 padding 
+    會超出container 因此要補回來
+    */
+  .container{
+    display: flex;
+    margin: auto;
+    padding-left: var(--mypadding);
+    padding-right: var(--mypadding);
+    max-width: 1200px;
+  } 
+  /*
+     特殊排版 巢狀隔線
+   在包一層 row
+   分欄容器
+   為了防止畫面因為 padding 歪掉
+   所以加上負值 padding
+   ( border-box; 負值paddin 往外)
+  */
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left:calc(var(--mypadding) * -1);
+    padding-right:calc(var(--mypadding) * -1);
+  }
+
+    /* 
+    平板/直 768px / md
+    平板/橫 1024px / lg
+    桌機    1280  / xl
+  */
+  /* 手機版 */
+ .col-1{width: 8.333333%; }
+ .col-2{width: 16.666666%;}
+ .col-3{width: 25%;}
+ .col-4{width: 33.333333%;}
+ .col-5{width: 41.666666%;}
+ .col-6{width: 50%;}
+ .col-7{width: 58.333333%;}
+ .col-8{width: 66.666666%;}
+ .col-9{width: 75%;}
+ .col-10{width: 83.333333%;}
+ .col-11{width: 91.666666%;}
+ .col-12{width: 100%;} 
+
+  /* 平板直 */
+  @media screen and (min-width:768px) {
+    .col-md-1{width: 8.333333%; }
+    .col-md-2{width: 16.666666%;}
+    .col-md-3{width: 25%;}
+    .col-md-4{width: 33.333333%;}
+    .col-md-5{width: 41.666666%;}
+    .col-md-6{width: 50%;}
+    .col-md-7{width: 58.333333%;}
+    .col-md-8{width: 66.666666%;}
+    .col-md-9{width: 75%;}
+    .col-md-10{width: 83.333333%;}
+    .col-md-11{width: 91.666666%;}
+    .col-md-12{width: 100%;}   
+  }
+  /* 平板橫 */
+  @media screen and (min-width:1024px) {
+    .col-lg-1{width: 8.333333%; }
+    .col-lg-2{width: 16.666666%;}
+    .col-lg-3{width: 25%;}
+    .col-lg-4{width: 33.333333%;}
+    .col-lg-5{width: 41.666666%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-7{width: 58.333333%;}
+    .col-lg-8{width: 66.666666%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-10{width: 83.333333%;}
+    .col-lg-11{width: 91.666666%;}
+    .col-lg-12{width: 100%;} 
+  }
+  /* 桌機 */
+  @media screen and (min-width:1280px) {
+    .col-xl-1{width: 8.333333%; }
+    .col-xl-2{width: 16.666666%;}
+    .col-xl-3{width: 25%;}
+    .col-xl-4{width: 33.333333%;}
+    .col-xl-5{width: 41.666666%;}
+    .col-xl-6{width: 50%;}
+    .col-xl-7{width: 58.333333%;}
+    .col-xl-8{width: 66.666666%;}
+    .col-xl-9{width: 75%;}
+    .col-xl-10{width: 83.333333%;}
+    .col-xl-11{width: 91.666666%;}
+    .col-xl-12{width: 100%;} 
+  }
+
+  /* 寫法二 */
+  .container{
+    max-width: 1200px;
+    margin: auto;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .row > [class*='col-']{
+    box-sizing: border-box;
+    width: calc(100% / 12 * var(--myWidth));
+    padding-left: var(--my-gap);
+    padding-right: var(--my-gap);
+  }
+  .col-1{  --myWidth:1;}
+  .col-2{  --myWidth:2;}
+  .col-3{  --myWidth:3;}
+  .col-4{  --myWidth:4;}
+  .col-5{  --myWidth:5;}
+  .col-6{  --myWidth:6;}
+  .col-7{  --myWidth:7;}
+  .col-8{  --myWidth:8;}
+  .col-9{  --myWidth:9;}
+  .col-10{ --myWidth:10; }
+  .col-11{ --myWidth:11; }
+  .col-12{ --myWidth:12; }
+
+/* 平板直 */
+@media screen and (min-width:768px) {
+  .col-md-1{ --myWidth:1;}
+  .col-md-2{ --myWidth:2;}
+  .col-md-3{ --myWidth:3;}
+  .col-md-4{ --myWidth:4;}
+  .col-md-5{ --myWidth:5;}
+  .col-md-6{ --myWidth:6;}
+  .col-md-7{ --myWidth:7;}
+  .col-md-8{ --myWidth:8;}
+  .col-md-9{ --myWidth:9;}
+  .col-md-10{ --myWidth:10; }
+  .col-md-11{ --myWidth:11; }
+  .col-md-12{ --myWidth:12; }
+  }
+  /* 平板橫 */
+  @media screen and (min-width:1024px) {
+  .col-lg-1{ --myWidth:1;}
+  .col-lg-2{ --myWidth:2;}
+  .col-lg-3{ --myWidth:3;}
+  .col-lg-4{ --myWidth:4;}
+  .col-lg-5{ --myWidth:5;}
+  .col-lg-6{ --myWidth:6;}
+  .col-lg-7{ --myWidth:7;}
+  .col-lg-8{ --myWidth:8;}
+  .col-lg-9{ --myWidth:9;}
+  .col-lg-10{ --myWidth:10; }
+  .col-lg-11{ --myWidth:11; }
+  .col-lg-12{ --myWidth:12; }
+  }
+  /* 桌機 */
+  @media screen and (min-width:1280px) {
+  .col-xl-1{ --myWidth:1;}
+  .col-xl-2{ --myWidth:2;}
+  .col-xl-3{ --myWidth:3;}
+  .col-xl-4{ --myWidth:4;}
+  .col-xl-5{ --myWidth:5;}
+  .col-xl-6{ --myWidth:6;}
+  .col-xl-7{ --myWidth:7;}
+  .col-xl-8{ --myWidth:8;}
+  .col-xl-9{ --myWidth:9;}
+  .col-xl-10{ --myWidth:10; }
+  .col-xl-11{ --myWidth:11; }
+  .col-xl-12{ --myWidth:12; }
+  }

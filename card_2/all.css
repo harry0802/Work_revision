@@ -1,15 +1,21 @@
-.pricing_Menu{
-    padding: 20px 15px;
-}
-.container{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+p,h3,span{font-family: 'Montserrat', sans-serif;}
+
+.pricing_Menu{
+    padding: 20px 0;
+}
+.wrap{
+ padding: 10px
 }
 .pricing_title{
     display: flex;
     flex-direction: column;
+    margin: auto;
     padding: 10px;
     padding-bottom: 25px;
     text-align: center;
@@ -21,12 +27,13 @@
 .container .pricing_title p{
     margin-bottom: 27px;
     font-size: 12px;
+    color: #1b81fd;
     order: 1;
 }
 /*  共用卡片設定 */
 .card{
-    margin: 10px;
-    padding:  20px 20px 20px;
+    width: 100%;
+    padding:0  20px 20px 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
@@ -104,17 +111,18 @@
     color: #fff;
     background: #5928DB;
 }
-.purple_card.card .card_icon{
+.purple_card i{
     color: #fff;
 }
 .purple_card .best_Icon{
-    /* content: 'BEST'; */
     position: absolute;
     top: 0;
     right: 0;
     display: inline-block;
     width: 100px;
     height: 100px;
+    color: #fff;
+    text-transform: uppercase;
     transform: rotate(45deg);
 
 
@@ -131,6 +139,28 @@
     letter-spacing: 3px;
     background: #1B81FD;
 }
+@media screen and (min-width:768px) {
+    .pricing_Menu{
+        padding: 20px 0px;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card{
+        padding:0  20px 20px 20px;
+      
+    }
+    .container 
+    .business_card,
+    .purple_card 
+    ,.computer_card{
+    padding:0  15px 60px 15px;;
 
+    }
+    .card .card_Text p{
+        font-size: 14px;
+    }
+}
 
 
