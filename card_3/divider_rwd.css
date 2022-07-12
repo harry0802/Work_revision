@@ -1,0 +1,82 @@
+:root{
+--mypadding:15px;
+--my-gap:15px;
+--myWidth:1;
+--myrow:15px; 
+}
+
+
+  /* 寫法二 */
+  .container{
+    max-width: 1200px;
+    margin: auto;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .row > [class*='col-']{
+    box-sizing: border-box;
+    width: calc(100% / 12 * var(--myWidth));
+    padding-left: var(--my-gap);
+    padding-right: var(--my-gap);
+  }
+  .col-1{  --myWidth:1;}
+  .col-2{  --myWidth:2;}
+  .col-3{  --myWidth:3;}
+  .col-4{  --myWidth:4;}
+  .col-5{  --myWidth:5;}
+  .col-6{  --myWidth:6;}
+  .col-7{  --myWidth:7;}
+  .col-8{  --myWidth:8;}
+  .col-9{  --myWidth:9;}
+  .col-10{ --myWidth:10; }
+  .col-11{ --myWidth:11; }
+  .col-12{ --myWidth:12; }
+
+/* 平板直 */
+@media screen and (min-width:768px) {
+  .col-md-1{ --myWidth:1;}
+  .col-md-2{ --myWidth:2;}
+  .col-md-3{ --myWidth:3;}
+  .col-md-4{ --myWidth:4;}
+  .col-md-5{ --myWidth:5;}
+  .col-md-6{ --myWidth:6;}
+  .col-md-7{ --myWidth:7;}
+  .col-md-8{ --myWidth:8;}
+  .col-md-9{ --myWidth:9;}
+  .col-md-10{ --myWidth:10; }
+  .col-md-11{ --myWidth:11; }
+  .col-md-12{ --myWidth:12; }
+  }
+  /* 平板橫 */
+  @media screen and (min-width:1024px) {
+  .col-lg-1{ --myWidth:1;}
+  .col-lg-2{ --myWidth:2;}
+  .col-lg-3{ --myWidth:3;}
+  .col-lg-4{ --myWidth:4;}
+  .col-lg-5{ --myWidth:5;}
+  .col-lg-6{ --myWidth:6;}
+  .col-lg-7{ --myWidth:7;}
+  .col-lg-8{ --myWidth:8;}
+  .col-lg-9{ --myWidth:9;}
+  .col-lg-10{ --myWidth:10; }
+  .col-lg-11{ --myWidth:11; }
+  .col-lg-12{ --myWidth:12; }
+  }
+  /* 桌機 */
+  @media screen and (min-width:1200px) {
+  .col-xl-1{ --myWidth:1;}
+  .col-xl-2{ --myWidth:2;}
+  .col-xl-3{ --myWidth:3;}
+  .col-xl-4{ --myWidth:4;}
+  .col-xl-5{ --myWidth:5;}
+  .col-xl-6{ --myWidth:6;}
+  .col-xl-7{ --myWidth:7;}
+  .col-xl-8{ --myWidth:8;}
+  .col-xl-9{ --myWidth:9;}
+  .col-xl-10{ --myWidth:10; }
+  .col-xl-11{ --myWidth:11; }
+  .col-xl-12{ --myWidth:12; }
+  }

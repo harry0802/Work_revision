@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap'); 
+*{
+    box-sizing: border-box;
+}
+h3,p{font-family: 'Montserrat', sans-serif;}
+/* 手機滿版不要隔線 */
+.column_Element{
+    width: 100%;
+}
+/* 共用 product_Description*/
+.container .product_Description{
+    padding: 44px 35px 61px 41px;
+    text-align: center;
+    color: #fff;
+}
+/* 三個區塊不同顏色 */
+.container .workIcon_Place{
+ background:#1B81FD ;
+}
+.container .making_Projects{
+    background: #127AF8;
+}
+.container .get_Successful{
+    background: #3490FF;
+}
+/* 共用 workIcon*/
+.product_Description .workIcon{
+    padding-bottom: 25px;
+}
+.workIcon span{
+    display: block;
+}
+.workIcon span i{
+    font-size: 52px;
+}
+
+.product_Description .workIcon{}
+
+.product_Description .workText{}
+.product_Description .workText{}
+/* 共用文字 */
+.workText .work_title{
+    padding-bottom: 16px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 3.6px;
+    font-weight: 400;
+}
+.workText .work_title{}
+
+.workText > p{
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 300;
+}
+.workText .work_title p{}
+
+/*  */
+.workIcon_Place .workIcon > span{
+    position: relative;
+}
+.workIcon_Place .symbol::before{
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    width: .3em;
+    height:.3em ;
+    border-radius: 50%;
+    background: #fff;
+
+}
