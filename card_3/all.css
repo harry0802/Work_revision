@@ -41,10 +41,7 @@ h3,p{font-family: 'Montserrat', sans-serif;}
     font-size: 52px;
 }
 
-.product_Description .workIcon{}
 
-.product_Description .workText{}
-.product_Description .workText{}
 /* 共用文字 */
 .workText .work_title{
     padding-bottom: 16px;
@@ -53,14 +50,14 @@ h3,p{font-family: 'Montserrat', sans-serif;}
     letter-spacing: 3.6px;
     font-weight: 400;
 }
-.workText .work_title{}
+
 
 .workText > p{
     font-size: 14px;
     line-height: 26px;
     font-weight: 300;
 }
-.workText .work_title p{}
+
 
 /*  */
 .workIcon .symbol{
