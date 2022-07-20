@@ -15,8 +15,10 @@ img{
 /* milestone 共用區塊 */
 .milestone_cardwarp{
     height: 100%;
+    width: auto;
     padding-top: 84px;
     text-align: center;
+    flex-grow: 1;
 }
 .fin_top{
     background-image: url(/section_Leading_the_market/fin.webp);
@@ -28,7 +30,8 @@ img{
     padding: 10px;
 }
 .milestone_card{}
-.milestone_card{}
+.milestone_card{
+}
 
 .milestone_icon{
     margin-bottom: 4px;
@@ -58,6 +61,12 @@ img{
     line-height:1.5;
     letter-spacing: 3px;
 }
+
+@media screen and (min-width:768px){
+    .wrap_Borders{
+        padding: 0;
+    }
+}
 /* leading_Market */
 
 /* 共用區塊 */
@@ -76,6 +85,9 @@ img{
 .leading_Market .leading_Market_text .leading_Market_title{
     font-size: .87em;
     line-height: .87em;
+    letter-spacing: .2em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
 }
 
 .leading_Market_text .line-bar{
@@ -92,7 +104,7 @@ img{
     font-weight: 300;
     letter-spacing: 0;
 }
-
+/* 按鈕 */
 .leading_Market_btn_group{
     margin-top: 35px;
 }
@@ -126,7 +138,7 @@ img{
 
 @media screen and (min-width:768px) {
     .alternate-pic{
-        align-self: center;
+        align-self:center ;
     }
     .leading_Market_text .line-bar{
         margin-left: 0;
@@ -137,4 +149,25 @@ img{
     .leading_Market_btn {
         margin-left: 0;
     }
+}
+@media screen and (min-width:1200px) {
+    .leading_Market_text{
+        padding-left: 67px;
+    }
+    .leading_Market_btn_group{
+        display: flex;
+        padding-left: 67px;
+    }
+    .leading_Market_btn,.leading_Market_btn:last-child{
+        margin: 0;
+    }
+    .leading_Market_btn:last-child{
+        margin-left: 36px;
+    }
+}
+@media screen and (min-width:1440px) {
+ 
+   
+ 
+    
 }
