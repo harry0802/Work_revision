@@ -165,9 +165,30 @@ img{
         margin-left: 36px;
     }
 }
-@media screen and (min-width:1440px) {
- 
-   
- 
-    
-}
+/*---leading_Market END---*/
+
+/*---footer---*/
+.main-footer{}
+.main-footer .infoot-header{}
+
+/* about*/
+.infoot-header .foot-about{}
+.infoot-header .foot-about .main-footTitile{}
+.infoot-header .foot-about p{}
+/* about END*/
+
+/*---tags---*/
+.infoot-header .foot-tags{}
+.infoot-header .foot-tags .main-footTitile{}
+.infoot-header .foot-tags .foot-links{}
+.infoot-header .foot-tags .foot-links li{}
+.infoot-header .foot-tags li a{}
+/* ---tagsEND---*/
+
+/*---recentComments---*/
+.infoot-header .foot-recentComments{}
+.infoot-header .foot-recentComments{}
+
+/* ---recentComments---*/
+
+/*---footerEND---*/
