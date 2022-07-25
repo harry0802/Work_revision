@@ -1,27 +1,27 @@
-:root{
-  --mypadding:15px;
-  --my-gap:15px;
-  --myWidth:1;
-  --myrow:15px; 
-  }
-   /*    定寬容器 */
-   /* 預先把寬度分成12等份 */
-  [class*='col-']{
-      box-sizing: border-box;
-      padding: 0  15px;
-  }
-      /* 
+:root {
+  --mypadding: 15px;
+  --my-gap: 15px;
+  --myWidth: 1;
+  --myrow: 15px;
+}
+/*    定寬容器 */
+/* 預先把寬度分成12等份 */
+[class*="col-"] {
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+/* 
       因為 row 加上了負值 padding 
       會超出container 因此要補回來
       */
-    .container{
-      display: flex;
-      margin: auto;
-      padding-left: var(--mypadding);
-      max-width: 1200px;
-      padding-right: var(--mypadding);
-    } 
-    /*
+.container {
+  display: flex;
+  margin: auto;
+  padding-left: var(--my-gap);
+  padding-right: var(--my-gap);
+  max-width: 1200px;
+}
+/*
        特殊排版 巢狀隔線
      在包一層 row
      分欄容器
@@ -29,79 +29,176 @@
      所以加上負值 padding
      ( border-box; 負值paddin 往外)
     */
-    .row{
-      display: flex;
-      flex-wrap: wrap;
-      margin-left:calc(var(--mypadding) * -1);
-      margin-right:calc(var(--mypadding) * -1);
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: calc(var(--my-gap) * -1);
+  padding-right: calc(var(--my-gap) * -1);
+}
 
-    }
-  
-      /* 
+/* 
       平板/直 768px / md
       平板/橫 1024px / lg
       桌機    1280  / xl
     */
-    /* 手機版 */
-   .col-1{width: 8.333333%; }
-   .col-2{width: 16.666666%;}
-   .col-3{width: 25%;}
-   .col-4{width: 33.333333%;}
-   .col-5{width: 41.666666%;}
-   .col-6{width: 50%;}
-   .col-7{width: 58.333333%;}
-   .col-8{width: 66.666666%;}
-   .col-9{width: 75%;}
-   .col-10{width: 83.333333%;}
-   .col-11{width: 91.666666%;}
-   .col-12{width: 100%;} 
-  
-    /* 平板直 */
-    @media screen and (min-width:768px) {
-      .col-md-1{width: 8.333333%; }
-      .col-md-2{width: 16.666666%;}
-      .col-md-3{width: 25%;}
-      .col-md-4{width: 33.333333%;}
-      .col-md-5{width: 41.666666%;}
-      .col-md-6{width: 50%;}
-      .col-md-7{width: 58.333333%;}
-      .col-md-8{width: 66.666666%;}
-      .col-md-9{width: 75%;}
-      .col-md-10{width: 83.333333%;}
-      .col-md-11{width: 91.666666%;}
-      .col-md-12{width: 100%;}   
-      .Bespoke-1{width: 52%;}
-      .Bespoke-2{width: 48%;}
-   
-    }
-    /* 平板橫 */
-    @media screen and (min-width:1024px) {
-      .col-lg-1{width: 8.333333%; }
-      .col-lg-2{width: 16.666666%;}
-      .col-lg-3{width: 25%;}
-      .col-lg-4{width: 33.333333%;}
-      .col-lg-5{width: 41.666666%;}
-      .col-lg-6{width: 50%;}
-      .col-lg-7{width: 58.333333%;}
-      .col-lg-8{width: 66.666666%;}
-      .col-lg-9{width: 75%;}
-      .col-lg-10{width: 83.333333%;}
-      .col-lg-11{width: 91.666666%;}
-      .col-lg-12{width: 100%;} 
-    }
-    /* 桌機 */
-    @media screen and (min-width:1280px) {
-      .col-xl-1{width: 8.333333%; }
-      .col-xl-2{width: 16.666666%;}
-      .col-xl-3{width: 25%;}
-      .col-xl-4{width: 33.333333%;}
-      .col-xl-5{width: 41.666666%;}
-      .col-xl-6{width: 50%;}
-      .col-xl-7{width: 58.333333%;}
-      .col-xl-8{width: 66.666666%;}
-      .col-xl-9{width: 75%;}
-      .col-xl-10{width: 83.333333%;}
-      .col-xl-11{width: 91.666666%;}
-      .col-xl-12{width: 100%;} 
-    }
-  
+/* 手機版 */
+.col-1 {
+  width: 8.333333%;
+}
+.col-2 {
+  width: 16.666666%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.333333%;
+}
+.col-5 {
+  width: 41.666666%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.333333%;
+}
+.col-8 {
+  width: 66.666666%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.333333%;
+}
+.col-11 {
+  width: 91.666666%;
+}
+.col-12 {
+  width: 100%;
+}
+
+/* 平板直 */
+@media screen and (min-width: 768px) {
+  .col-md-1 {
+    width: 8.333333%;
+  }
+  .col-md-2 {
+    width: 16.666666%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.333333%;
+  }
+  .col-md-5 {
+    width: 41.666666%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.333333%;
+  }
+  .col-md-8 {
+    width: 66.666666%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.333333%;
+  }
+  .col-md-11 {
+    width: 91.666666%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .Bespoke-1 {
+    width: 52%;
+  }
+  .Bespoke-2 {
+    width: 48%;
+  }
+}
+/* 平板橫 */
+@media screen and (min-width: 1024px) {
+  .col-lg-1 {
+    width: 8.333333%;
+  }
+  .col-lg-2 {
+    width: 16.666666%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.333333%;
+  }
+  .col-lg-5 {
+    width: 41.666666%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.333333%;
+  }
+  .col-lg-8 {
+    width: 66.666666%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.333333%;
+  }
+  .col-lg-11 {
+    width: 91.666666%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+/* 桌機 */
+@media screen and (min-width: 1280px) {
+  .col-xl-1 {
+    width: 8.333333%;
+  }
+  .col-xl-2 {
+    width: 16.666666%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.333333%;
+  }
+  .col-xl-5 {
+    width: 41.666666%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-7 {
+    width: 58.333333%;
+  }
+  .col-xl-8 {
+    width: 66.666666%;
+  }
+  .col-xl-9 {
+    width: 75%;
+  }
+  .col-xl-10 {
+    width: 83.333333%;
+  }
+  .col-xl-11 {
+    width: 91.666666%;
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+}
