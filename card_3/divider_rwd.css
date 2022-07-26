@@ -32,8 +32,8 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding-left: calc(var(--my-gap) * -1);
-  padding-right: calc(var(--my-gap) * -1);
+  margin-left: calc(var(--my-gap) * -1);
+  margin-right: calc(var(--my-gap) * -1);
 }
 
 /* 

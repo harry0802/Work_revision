@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 /*
     padding 上 
@@ -182,10 +182,12 @@ img {
   background: #2a3237;
 }
 .main-footTitile {
-  font-size: 0.88em;
-  line-height: 1em;
   margin-bottom: 25px;
+  font-size: 0.88em;
+  line-height: 1.322em;
+  font-weight: 600;
   font-family: Montserrat, sans-serif;
+  letter-spacing: 2px;
 }
 
 /* about*/
@@ -193,7 +195,7 @@ img {
 }
 .infoot-header .foot-about .main-footTitile {
   margin-bottom: 23px;
-  font-weight: 600;
+  line-height: 1em;
 }
 .infoot-header .foot-about p {
   text-align: left;
@@ -209,6 +211,7 @@ img {
 .infoot-header .foot-tags .main-footTitile {
 }
 .infoot-header .foot-tags .foot-links {
+  padding-top: 12px;
   font-size: 0;
 }
 .infoot-header .foot-tags .foot-links li {
@@ -230,23 +233,70 @@ img {
 /* ---tagsEND---*/
 
 /*---recentComments---*/
+/* main-footer */
 .infoot-header .foot-recentComments {
 }
 
 .foot-recentComments .forum-wrap {
 }
-.foot-recentComments .forum-wrap .forum-l ~ ink {
+.foot-recentComments .forum-wrap .forum-link {
   display: flex;
   flex-direction: column;
 }
+.foot-recentComments .forum-wrap .forum-link:first-of-type {
+  margin-bottom: 30px;
+}
 .foot-recentComments .forum-wrap .forum-link a {
+  margin-bottom: 5px;
+  font-size: 1.125em;
+  line-height: 1.23em;
   text-decoration: none;
+  font-weight: 900;
   color: #fff;
+  font-family: Montserrat, sans-serif;
 }
 .foot-recentComments .forum-wrap .forum-link span {
+  font-size: 12px;
+  line-height: 1.33em;
+  color: #898d91;
+}
+/*--- main-footer --- END */
+/*---infoot-footer---*/
+.main-footer .infoot-footer {
+  background: #252b2f;
+  color: #898d91;
+}
+.main-footer .infoot-footer .wrap-scope {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+}
+.infoot-footer .foot-logo {
+}
+.infoot-footer .foot-logo img {
+  width: 128px;
+}
+.infoot-footer .foot-copyright {
+  line-height: 1.65em;
+}
+.infoot-footer .foot-Community {
+}
+.infoot-footer .foot-Community ul {
+  display: flex;
+  justify-content: end;
+}
+.infoot-footer .foot-Community ul li {
+  margin-left: 10px;
+}
+.foot-Community ul a {
+  font-size: 14px;
+  display: inline-block;
+  padding: 6.3px;
+  text-decoration: none;
   color: #898d91;
 }
 
+/*--- infoot-footer ---END */
 /* ---recentComments---*/
 
 /*---footerEND---*/
