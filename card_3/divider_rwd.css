@@ -1,8 +1,5 @@
 :root {
-  --mypadding: 15px;
   --my-gap: 15px;
-  --myWidth: 1;
-  --myrow: 15px;
 }
 /*    定寬容器 */
 /* 預先把寬度分成12等份 */
@@ -15,7 +12,6 @@
       會超出container 因此要補回來
       */
 .container {
-  display: flex;
   margin: auto;
   padding-left: var(--my-gap);
   padding-right: var(--my-gap);

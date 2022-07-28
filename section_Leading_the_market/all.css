@@ -173,7 +173,12 @@ img {
 /*---leading_Market END---*/
 
 /*---footer---*/
-.main-footer {
+.main-footer .scope-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.main-footer .scope-wrap .footer_wrap_Borders {
+  padding: 10px;
 }
 .main-footer .infoot-header {
   padding-top: 82px;
@@ -251,7 +256,7 @@ img {
   font-size: 1.125em;
   line-height: 1.23em;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 700;
   color: #fff;
   font-family: Montserrat, sans-serif;
 }
@@ -263,12 +268,12 @@ img {
 /*--- main-footer --- END */
 /*---infoot-footer---*/
 .main-footer .infoot-footer {
+  padding: 10px 0;
   background: #252b2f;
   color: #898d91;
 }
-.main-footer .infoot-footer .wrap-scope {
-  display: flex;
-  flex-direction: column;
+
+.main-footer .infoot-footer .scope-wrap {
   justify-self: start;
 }
 .infoot-footer .foot-logo {
@@ -277,6 +282,7 @@ img {
   width: 128px;
 }
 .infoot-footer .foot-copyright {
+  text-align: center;
   line-height: 1.65em;
 }
 .infoot-footer .foot-Community {
@@ -300,3 +306,12 @@ img {
 /* ---recentComments---*/
 
 /*---footerEND---*/
+@media screen and (min-width: 768px) {
+  .main-footer .scope-wrap {
+    flex-direction: row;
+  }
+  .infoot-footer .scope-wrap {
+    flex-grow: 1;
+    align-items: center;
+  }
+}
