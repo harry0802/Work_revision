@@ -275,6 +275,7 @@ img {
 
 .main-footer .infoot-footer .scope-wrap {
   justify-self: start;
+  flex-grow: 1;
 }
 .infoot-footer .foot-logo {
 }
@@ -311,7 +312,6 @@ img {
     flex-direction: row;
   }
   .infoot-footer .scope-wrap {
-    flex-grow: 1;
     align-items: center;
   }
 }
